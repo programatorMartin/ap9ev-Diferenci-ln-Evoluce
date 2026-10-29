@@ -1,4 +1,3 @@
-
 import random
 import matplotlib.pyplot as plt
 
@@ -111,13 +110,11 @@ def run_de(cost_func, bounds, variant='rand1',
                     for d in range(dim)
                 ]
 
-            # Ošetrenie hraníc
             v = [
                 clip(v[d], bounds[d][0], bounds[d][1])
                 for d in range(dim)
             ]
 
-            # Kríženie
             u = list(pop[i])
             j_rand = random.randrange(dim)
 
@@ -180,8 +177,7 @@ if __name__ == "__main__":
     print(f"Best/1: {best_b:.12g}")
     print(f"jDE:    {best_j:.12g}")
 
-    # Graf konvergencie
-    # Ochrana pred logaritmom nulovej hodnoty
+    # Graf
     eps = 1e-16
 
     plt.figure(figsize=(10, 6))
